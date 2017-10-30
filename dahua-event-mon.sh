@@ -1,4 +1,9 @@
-##
+## script makes http session to cam and monitors alarms
+## when alarm occured action script is launching
+## unique instance is assured by PID file
+## continuity is/to be assured by cron
+## 
+
 PIDFILE=/tmp/${0##*/}.pid
 if [ -f $PIDFILE ]
 then
