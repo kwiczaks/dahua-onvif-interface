@@ -30,6 +30,6 @@ else
   fi
 fi
 
-read -n1 -r -p "Press any key to close proces and free PID file..." key
+curl -s -N --user {user}:{password} --digest "http://{ip}:{port}/cgi-bin/eventManager.cgi?action=attach&codes=\[VideoMotion\]" | grep --line-buffered "Code=VideoMotion;action=Start" | while read LINE; do snapshot.sh; done
 
 rm $PIDFILE
